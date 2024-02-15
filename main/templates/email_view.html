@@ -1,0 +1,16 @@
+<!-- main/templates/email_view.html -->
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <link rel="stylesheet" href="{% static 'home.css' %}">
+<body>
+
+<h1>Hello World!</h1>
+<p>Welcome to my first Django project!</p>
+<form method="post" action="{% url 'email_view' %}">
+    {% csrf_token %}
+    {{ form }}
+    <input type="submit" value="OK">
+</form>
+</body>
+</html>

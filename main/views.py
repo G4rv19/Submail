@@ -28,4 +28,4 @@ def email_view(request):
     else:
         form = EmailForm()
     
-    return render(request, 'your_template.html', {'form': form})
+    return render(request, 'email_view.html', {'form': form})
