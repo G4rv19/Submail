@@ -1,15 +1,15 @@
+<!-- main/templates/your_template.html -->
 {% load static %}
 <!DOCTYPE html>
 <html>
- <link rel="stylesheet" href="{% static 'home.css' %}">
+    <link rel="stylesheet" href="{% static 'home.css' %}">
 <body>
 
 <h1>Hello World!</h1>
 <p>Welcome to my first Django project!</p>
 <form method="post" action="{% url 'email_view' %}">
     {% csrf_token %}
-    <label for="email">Email:</label>
-    <input id="email" type="email" name="email" value="{{ Email }}" placeholder="Email">
+    {{ form }}
     <input type="submit" value="OK">
 </form>
 </body>
