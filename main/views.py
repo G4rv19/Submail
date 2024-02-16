@@ -2,6 +2,7 @@ import re #regex
 from django.shortcuts import render
 from .forms import EmailForm
 from django.http import HttpResponseBadRequest #for the bad request error.
+from .models import Email
 
 def tasklist(request):
     return render(request, 'home.html')
@@ -14,10 +15,11 @@ def email_view(request):
             email_pattern = r"^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$" #regex code of email verification
 
             # Check if the email matches the pattern
-            if re.match(email_pattern, email):
-                # Email is valid, print it to the terminal
-                print(f"Entered email: {email}")
+            if re.match(email_pattern, email):  # Email is valid, print it to the terminal
                 # Proceed with your logic if needed
+                print(f"Entered email: {email}")
+                #save the email to the database
+                Email.objects.create(email=email)
                 return HttpResponseBadRequest(f"Entered email: {email}")
             else:
                 # Email is not valid, print an error to the terminal
