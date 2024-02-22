@@ -1,33 +1,32 @@
-import re #regex
+from django.http import HttpResponse, HttpResponseBadRequest
 from django.shortcuts import render
 from .forms import EmailForm
 from django.http import HttpResponseBadRequest #for the bad request error.
 from .models import Email
+from django.shortcuts import render
+import re
 
 def tasklist(request):
     return render(request, 'home.html')
 
 def email_view(request):
-    if request.method == 'POST': # if the request from is post
+    if request.method == 'POST':
         form = EmailForm(request.POST)
         if form.is_valid():
-            email = form.cleaned_data['email'] #the email from the form in html by user
-            email_pattern = r"^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$" #regex code of email verification
+            email = form.cleaned_data['email']
+            email_pattern = r"^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"
 
             # Check if the email matches the pattern
-            if re.match(email_pattern, email):  # Email is valid, print it to the terminal
-                # Proceed with your logic if needed
+            if re.match(email_pattern, email):
+                # Email is valid, print it to the terminal
                 print(f"Entered email: {email}")
-                #save the email to the database
                 Email.objects.create(email=email)
-                return HttpResponseBadRequest(f"Entered email: {email}")
+                # Proceed with your logic if needed
+                return HttpResponse(f"Entered email: {email} (Saved to the database)")
             else:
-                # Email is not valid, print an error to the terminal
                 print("Unexpected error: Invalid email format.")
-                # Return an HTTP 400 Bad Request response with an error message
                 return HttpResponseBadRequest("Unexpected error: Invalid email format.")
-
     else:
         form = EmailForm()
     
-    return render(request, 'email_view.html', {'form': form})
+    return render(request, 'email.html', {'form': form})
