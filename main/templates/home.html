@@ -21,7 +21,7 @@
     <div class="email-container">
       <form method="post" action="{% url 'email_view' %}">
         {% csrf_token %}
-        <input type="email" class="email-input" placeholder="Your email address" required>
+        <input type="email" class="email-input" placeholder="Your email address" name="email" required>
         <button class="send-button" type="submit">Send</button>
       </form>
   </div>
@@ -29,7 +29,6 @@
     <h2>Get updates of on my upcoming projects and follow ups!</h2>
   </div>
   <div class="follow-me">
-    <p>Follow me</p>
   </div>
   </body>
 </html>
