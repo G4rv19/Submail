@@ -21,6 +21,7 @@ def email_view(request):
                 # Email is valid, print it to the terminal
                 print(f"Entered email: {email}")
                 # Proceed with your logic if needed
+                email = form.cleaned_data['email']
                 return HttpResponseBadRequest(f"Entered email: {email}")
             else:
                 print("Unexpected error: Invalid email format.")
@@ -28,4 +29,4 @@ def email_view(request):
     else:
         form = EmailForm()
     
-    return render(request, 'your_template.html', {'form': form})
+    return render(request, 'email.html', {'form': form})
