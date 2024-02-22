@@ -1,4 +1,60 @@
 body {
-    background-color: lightblue;
-    font-family: verdana;
-  }
+  background-color: #FCEEE7;
+  height: 100vh;
+  margin: 0;
+  padding: 0px;
+  overflow: hidden;
+}
+.title {
+  font-family: 'Gamja Flower', sans-serif;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 5px;
+  color: #F57B51;
+}
+
+.first-paragraph h2 {
+  font-family: 'Gamja Flower', sans-serif;
+  text-align: center;
+  margin-top: 20%;
+  color: #F57B51;
+}
+
+.email-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: hidden;
+  width: 400px;
+  margin:0 auto;
+  background-color: D9D9D9;
+  border: 2px solid #D9D9D9;
+}
+
+.email-input {
+  flex: 1;
+  padding: 15px;
+  width: 290px;
+  border: none;
+  outline: none;
+  font-size: 18px;
+  font-family: 'Gamja Flower', sans-serif;
+}
+
+.send-button {
+  background-color: #F57B51;
+  color: white;
+  border: none;
+  width: 76.5px;
+  padding: 15px 20px;
+  cursor: pointer;
+  font-size: 18px;
+  font-family: 'Gamja Flower', sans-serif;
+}
+.Second h2 {
+  font-family: 'Gamja Flower', sans-serif;
+  text-align: center;
+  color: #F57B51;
+}
