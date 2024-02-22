@@ -17,12 +17,12 @@ def email_view(request):
             email_pattern = r"^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"
 
             # Check if the email matches the pattern
-            if re.match(email_pattern, email):
-                # Email is valid, print it to the terminal
-                print(f"Entered email: {email}")
-                Email.objects.create(email=email)
+            if re.match(email_pattern, email):  # Email is valid, print it to the terminal
                 # Proceed with your logic if needed
-                return HttpResponse(f"Entered email: {email} (Saved to the database)")
+                print(f"Entered email: {email}")
+                #save the email to the database
+                Email.objects.create(email=email)
+                return HttpResponseBadRequest(f"Entered email: {email}")
             else:
                 print("Unexpected error: Invalid email format.")
                 return HttpResponseBadRequest("Unexpected error: Invalid email format.")
