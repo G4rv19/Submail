@@ -15,7 +15,6 @@ def email_view(request):
         if form.is_valid():
             email = form.cleaned_data['email']
             email_pattern = r"^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"
-
             # Check if the email matches the pattern
             if re.match(email_pattern, email):  # Email is valid, print it to the terminal
                 # Proceed with your logic if needed

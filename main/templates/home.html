@@ -18,6 +18,19 @@
     <div class="first-paragraph">
       <h2>Enter your email address to subscribe for updates!</h2>
     </div>
+    {% if error_message %}
+        <div id="error-message" style="color: red;">
+            {{ error_message }}
+        </div>
+        <script>
+            // Hide the error message after 5 seconds
+            setTimeout(function() {
+                var errorMessage = document.getElementById('error-message');
+                errorMessage.style.display = 'none';
+            }, 5000);
+        </script>
+    {% endif %}
+
     <div class="email-container">
       <form method="post" action="{% url 'email_view' %}">
         {% csrf_token %}
