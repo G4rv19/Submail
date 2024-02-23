@@ -22,7 +22,7 @@ def email_view(request):
                 print(f"Entered email: {email}")
                 #save the email to the database
                 Email.objects.create(email=email)
-                return HttpResponseBadRequest(f"Entered email: {email}")
+                return render(request, 'email.html', {'form': form})
             else:
                 print("Unexpected error: Invalid email format.")
                 return HttpResponseBadRequest("Unexpected error: Invalid email format.")

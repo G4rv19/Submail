@@ -1,0 +1,16 @@
+body{
+    background-color: #FCEEE7;
+  }
+  .title h1 {
+    margin-top: 5px;
+    text-align: center;
+    font-family: 'Gamja Flower', sans-serif;
+    color: #F57B51;
+  }
+  .message p {
+    text-align: center;
+    margin-top: 25%;
+    font-size: 20px;
+    font-family: 'Gamja Flower', sans-serif;
+    color: #F57B51;
+  }

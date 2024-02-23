@@ -1,1 +1,18 @@
-<p>Hello World</p>
+{% load static %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="{% static 'email.css' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Gamja+Flower&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <div class="title">
+      <h1>Sub_mail</h1>
+    </div>
+    <div class="message">
+      <p>Thank you! for registering your email. Always stay updated!</p>
+    </div>
+  </body>
+</html>
