@@ -17,19 +17,20 @@ body{
   .home {
     text-align: center;
   }
+
   .button {
+    display: inline-block;
     height: 50px;
     width: 300px;
+    margin: 0 auto; /* Center the button horizontally */
     text-align: center;
     color: #FFF;
     background-color: #F57B51;
-    border: 2px;
-    font-size: 15px;
+    border: 2px solid #F57B51; /* Added 'solid' for better clarity */
+    font-size: 20px; /* Adjusted font size */
     font-family: 'Gamja Flower', sans-serif;
-    display: inline-block;
-    text-align: center;
     text-decoration: none;
-    line-height: 20px;
+    line-height: 50px; /* Center text vertically within the button */
   }
   .button a {
     text-align: center;
