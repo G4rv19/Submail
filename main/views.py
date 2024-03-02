@@ -20,7 +20,7 @@ def email_view(request):
                 # Check if the email already exists in the database
                 if Email.objects.filter(email=email).exists():
                     print("Email already exists")
-                    return render(request, 'home.html')
+                    return render(request, 'exists.html')
                 else:
                     print("Saved to db")
                     # Save the email to the database
