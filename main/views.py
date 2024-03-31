@@ -33,4 +33,4 @@ def email_view(request):
         form = EmailForm()
 
     # Render the form when the page is first loaded or on form validation failure
-    return render(request, 'email.html', {'form': form})
+    return render(request, 'home.html', {'form': form})
